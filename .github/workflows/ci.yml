@@ -27,5 +27,5 @@ jobs:
       run: cmake --build ${{github.workspace}}/build --config ${{ matrix.build_type }}
 
     - name: Run CTest Suite
-      cwd: ${{github.workspace}}/build
+      working-directory: ${{github.workspace}}/build
       run: ctest --output-on-failure -C ${{ matrix.build_type }}
