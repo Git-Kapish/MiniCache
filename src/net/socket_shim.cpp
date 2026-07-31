@@ -1,5 +1,7 @@
 #include "net/socket_shim.hpp"
 #include <iostream>
+#include <cstring>
+#include <cerrno>
 
 namespace minicache::net {
 
