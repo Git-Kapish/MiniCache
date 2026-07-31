@@ -1,0 +1,43 @@
+# Build & Compiler Directories
+build/
+bin/
+out/
+.vs/
+.vscode/
+.idea/
+
+# CMake Generated Files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# MSVC & Visual Studio Artifacts
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.dir/
+*.tlog/
+*.pdb
+*.ilk
+*.idb
+*.obj
+*.exe
+*.dll
+*.lib
+
+# MiniCache Persistence Files (Data & Logs)
+*.aof
+*.rdb
+appendonly.aof
+dump.aof
+dump.rdb
+test_*.aof
+test_*.rdb
+
+# Operating System Files
+.DS_Store
+Thumbs.db
