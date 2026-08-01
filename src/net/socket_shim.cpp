@@ -28,7 +28,8 @@ void SocketShim::closeSocket(SocketHandle s) {
 #if defined(_WIN32) || defined(_WIN64)
         closesocket(s);
 #else
-        close(s);
+        ::shutdown(s, SHUT_RDWR);
+        ::close(s);
 #endif
     }
 }
