@@ -19,16 +19,16 @@ Full technical documentation:
 
 All phases below — including both stretch goals — are complete.
 
-### Phase 1 — Core single-threaded store ✅
+### Phase 1 — Core single-threaded store 
 Single-shard in-memory store, lazy TTL expiry, RESP2 parser/encoder, TCP listener with thread-per-connection handling, and the core string/counter command set (`SET`, `GET`, `DEL`, `EXISTS`, `EXPIRE`, `TTL`, `PERSIST`, `INCR`, `DECR`).
 
-### Phase 2 — Concurrency, sharding, eviction ✅
+### Phase 2 — Concurrency, sharding, eviction 
 `ShardRouter` partitioning the keyspace across N shards, per-shard locking to bound contention, `EvictionPolicy` (Strategy pattern) with `LRUPolicy` and `LFUPolicy`, an active expiry sweeper, and the remaining Hash/List/Set command sets.
 
-### Phase 3 — Persistence & benchmarking ✅
+### Phase 3 — Persistence & benchmarking 
 Per-shard AOF with configurable fsync policy, periodic snapshotting, startup recovery (snapshot + AOF replay), and real throughput/latency numbers captured via `redis-benchmark` (see below).
 
-### Phase 4 — Stretch goals ✅
+### Phase 4 — Stretch goals 
 Originally scoped as "if time remains" — both shipped:
 - **Consistent hashing** (`ConsistentHashRing`, FNV-1a, 100 virtual nodes/shard) replacing plain `hash(key) % N`, minimizing key relocation on ring resize.
 - **Leader-follower replication** — a leader streams committed writes to read-only followers over a persistent connection (`--replicaof`).
